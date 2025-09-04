@@ -1,6 +1,7 @@
 
 import './App.css'
 import { Link } from 'react-router'
+import { Product } from "./features/products/components/Product";
 
 export const App = () => {
   return (
@@ -11,10 +12,11 @@ export const App = () => {
         <Link to="#">作成物</Link>
       </div>
       <div className="biography">
-        自己紹介部分
+        <h2>Profile</h2>
       </div>
       <div className="product">
-        作成したもの
+        <h2>Product</h2>
+        <Product />
       </div>
     </>
   )
