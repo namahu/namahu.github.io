@@ -1,0 +1,24 @@
+.productsContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    
+    .productCard {
+        background-color: #fffffb;
+        border: 2px solid #3e3e3e;
+        border-radius: 8px;
+        font-size: 1.5rem;
+        height: 32vh;
+        padding: 16px;
+        width: 32vw;
+
+        .cardItem {
+            display: grid;
+            grid-template-columns: 12vw 1fr;
+            text-align: left;
+        }
+        .itemTitle {
+            width: max-content;
+        }
+    }
+}

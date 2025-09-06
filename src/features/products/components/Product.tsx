@@ -1,12 +1,39 @@
 import type { FC } from "react";
+import { useGetPublicProducts } from "../api/get-product";
+
+import style from "../style/product.module.css";
+
 export const Product: FC = () => {
+    const products = useGetPublicProducts();
+    console.log({products});
     return (
-        <div className="productCard">
-            <div className="productName">test</div>
-            <div className="url">http://~</div>
-            <div className="productionPeriod">yyyy/mm/dd ~ yyyy/mm/dd</div>
-            <div className="overview">hogehoge</div>
-            <div className="technologyStack">hugahuga</div>
+        <div className={style.productsContainer}>
+            { products?.map(product => {
+                return (
+                    <div key={product.id} className={style.productCard}>
+                        <div className={style.cardItem}>
+                            <span className={style.itemTitle}>名前</span>
+                            <span>{product.name}</span>
+                        </div>
+                        <div className={style.cardItem}>
+                            <span className={style.itemTitle}>URL</span>
+                            <a href={product.url} target="_brank">{product.url}</a>
+                        </div>
+                        <div className={style.cardItem}>
+                            <span className={style.itemTitle}>制作期間</span>
+                            <span>{product.productionPeriod.start} ~ {product.productionPeriod.end}</span>
+                        </div>
+                        <div className={style.cardItem}>
+                            <span className={style.itemTitle}>概要</span>
+                            <span>{product.overview}</span>
+                        </div>
+                        <div className={style.cardItem}>
+                            <span className={style.itemTitle}>使用した技術・ツール</span>
+                            <span>{product.technologyStack}</span>
+                        </div>
+                    </div>
+                );
+            })}
         </div>
     );
 };
