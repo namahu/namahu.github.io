@@ -1,6 +1,6 @@
 .productsContainer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     gap: 32px;
     
     .productCard {
@@ -10,7 +10,6 @@
         font-size: 1.5rem;
         height: 32vh;
         padding: 16px;
-        width: 32vw;
 
         .cardItem {
             display: grid;
