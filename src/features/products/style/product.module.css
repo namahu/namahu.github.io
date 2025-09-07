@@ -19,5 +19,13 @@
         .itemTitle {
             width: max-content;
         }
+
+        .technologyStack {
+            border: 2px solid #e3e3e3;
+            border-radius: 16px;
+            width: fit-content;
+            padding: 4px 16px;
+            font-size: 1rem;
+        }
     }
 }

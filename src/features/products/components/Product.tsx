@@ -29,7 +29,18 @@ export const Product: FC = () => {
                         </div>
                         <div className={style.cardItem}>
                             <span className={style.itemTitle}>使用した技術・ツール</span>
-                            <span>{product.technologyStack}</span>
+                            <ul>
+                                {product.technologyStack.map((technology, index) => {
+                                    return (
+                                        <li 
+                                            key={product.id + index}
+                                            className={style.technologyStack}
+                                        >
+                                            {technology}
+                                        </li>
+                                    );
+                                })}
+                            </ul>
                         </div>
                     </div>
                 );

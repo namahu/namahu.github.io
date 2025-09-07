@@ -9,7 +9,7 @@ export type Product = {
         end: string | null
     };
     overview: string;
-    technologyStack: string;
+    technologyStack: string[];
     public: boolean;
 };
 
